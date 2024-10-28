@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te quiero <3 </title>
+</head>
+<body>
+   <div class="title">
+    <h1 style="color: rgb(209, 0, 0);">F</h1>
+    <h1>E</h1>
+    <h1>L</h1>
+    <h1>I</h1>
+    <h1>Z</h1>
+    <br>
+    <h1>C</h1>
+    <h1>U</h1>
+    <h1>M</h1>
+    <h1>P</h1>
+    <h1>L</h1>
+    <h1 style="color: rgb(209, 0, 0);">E</h1>
+   </div>
+   <div id="leftText"  hidden class="lefttText">
+<h2>elices 19!</h2>
+<h2>res genial!</h2>
+<h2>a vida</h2>
+<h2>rá</h2>
+<h2>iempre</h2>
+<br>
+<h2>contigo</h2>
+<h2>n montón</h2>
+<h2>ejor</h2>
+<h2>orque eres </h2>
+<h2 >o más lindo</h2>
+<h2>stoy deseando compartirtodos los años contigo!! <img height="20px" width="20px" src="https://www.svgrepo.com/show/13666/heart.svg" alt=""></h2>
+   </div>
+   <div class="candle">
+    <div id="flame" class="flame"></div>
+    <div id="flameBase" class="flameBase"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+   </div>
+   <div class="candle">
+    <div id="flame2" class="flame"></div>
+    <div id="flameBase2" class="flameBase"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+    <div class="stick"></div>
+   </div>
+   <div class="rightText">
+    <h1>1</h1>
+    <h1>9</h1>
+    <h1><img height="40px" width="40px" src="https://www.svgrepo.com/show/434191/party-popper.svg" alt=""></h1>
+   </div>
+   <div id="cake" class="cake">
+    <img height="250px" width="250px" src="https://www.svgrepo.com/show/475101/cake-tall.svg" alt="">
+   </div>
+</body>
+</html>
+<style>
+    body
+    {
+        padding: 5%;
+        display: flex;
+        background: rgb(234,249,38);
+        background: linear-gradient(90deg, rgba(234,249,38,1) 0%, rgba(230,237,63,0.9558404558404558) 47%, rgba(247,251,31,1) 100%);
+    }
+    .cake
+    {
+        display: flex;
+        align-items: end;
+        margin-left: -90%;
+    }
+    .rightText
+    {
+        display: flex;
+       margin-top: 20%;
+    }
+    h2
+    {
+        margin-top: 31px;
+    }
+    .candle
+    {
+        display: flex;
+        flex-direction: column;
+       align-self: center;
+       margin-left: 15%;
+        
+    }
+    .flame {
+    width: 1px;
+    height: 30px;
+    margin-left: 10%;
+    background-color: orange;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    border: red 10px solid;
+    position: relative;
+    animation: flicker 1s infinite ease-in-out alternate;
+    transform-origin: bottom center;
+    transition: background-color 0.3s, border-color 0.3s;
+    filter: blur(10px);
+    image-rendering: pixelated;
+    box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.8);
+    
+}
+.flameBase
+{
+    margin-bottom: 20%;
+    margin-top: -70%;
+    margin-left: -23%;
+        width: 25px;
+        height: 30px;
+        background-color: red;
+        border: orange 15px solid;
+        border-radius: 45%;
+        animation: flicker 1s infinite ease-in-out alternate;
+    transform-origin: bottom center;
+    transition: background-color 0.3s, border-color 0.3s;
+    z-index: -1;
+    filter: blur(3px);
+    image-rendering: pixelated;
+    box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.8);
+ 
+}
+    .stick
+    {
+      margin-left: -5%;
+        width: 20px;
+        height: 20px;
+        background-color: lightblue;
+        border: rgb(63, 71, 137) 2px solid;
+        border-radius: 40%;
+        margin-bottom: -5%;
+        box-shadow: 5px 5px 10px black;
+    }
+    @keyframes flicker {
+        0% {
+            transform: rotate(-5deg) translateX(-2px);
+        }
+        100% {
+            transform: rotate(5deg) translateX(2px);
+        }
+    }
+
+        </style>
+        <script>
+            let text = document.getElementById("leftText");
+            let element = document.getElementById("flame");
+            let element2 = document.getElementById("flameBase");
+            let cake = document.getElementById("cake");
+          
+
+            let element3 = document.getElementById("flame2");
+            let element4 = document.getElementById("flameBase2");
+            element.addEventListener("click", myFunct);
+            element2.addEventListener("click", myFunct);
+            element3.addEventListener("click", myFunct);
+            element4.addEventListener("click", myFunct);
+            function myFunct()
+            {
+
+                element2.style.width = "2px";
+                element2.style.heith = "2px";
+                element2.style.filter = "blur(0px)";
+                element2.style.border = "none";
+                element2.style.marginLeft = "10px";
+                element2.style.marginBottom = "-10px";
+                element2.style.backgroundColor = "brown";
+                element2.style.animation = "none"
+                text.style.display = "block";
+                element.style.display = "none";
+                cake.style.display = "none";
+           
+          
+
+                element4.style.width = "2px";
+                element4.style.heith = "2px";
+                element4.style.filter = "blur(0px)";
+                element4.style.border = "none";
+                element4.style.marginLeft = "10px";
+                element4.style.marginBottom = "-10px";
+                element4.style.backgroundColor = "brown";
+                element4.style.animation = "none"
+                   element3.style.display = "none";
+                element4.style.animation = "none"
+        
+           
+                
+            }
+        </script>
