@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te quiero <3 </title>
 </head>
-<body>
+<body id="body">
    <div class="title">
     <h1 style="color: #0041f1;">F</h1>
     <h1>E</h1>
@@ -50,52 +50,54 @@
     <div class="stick"></div>
     <div class="stick"></div>
    </div>
-   <div class="rightText">
-      </div>
    <div id="cake" class="cake">
-    <img height="250px" width="250px" src="https://www.svgrepo.com/show/475101/cake-tall.svg" alt="">
+<img  height="550px" width="250px" src="https://www.svgrepo.com/show/398295/shortcake.svg" alt="">
    </div>
 </body>
 </html>
 <style>
 body {
-    padding: 5%;
     display: flex;
     background-color: #ffe100;
     background-image: 
-        linear-gradient(90deg, #fff890 50%,  #ffbb00 200%), 
+         linear-gradient(blue, yellow), 
         url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeOwD0wxkriQ5yYTiPMwTYnQfBCdacsoD58g&s");
     background-blend-mode: multiply; 
     background-position: center; 
     font-family: "Brush Script MT", cursive;
 }
+
     .cake
-    {
-        display: flex;
+{
+    display: flex;
         align-items: end;
-        margin-left: -62%;
-    }
+        margin-left: -65%;
+}
     .rightText
     {
         display: flex;
-       margin-top: 20%;
     }
     h1
     {
-      
+   background-color: white;
     color:  #0041f1;
+    padding: 23%;
+    box-shadow: 10px 5px 10px black;
     }
     h2
     {
       
-        margin-top: 31px;
+        margin-top: 25%;
+        margin-left: 5%;
+        box-shadow: 5px 5px 5px black;
     }
     .candle
     {
         display: flex;
         flex-direction: column;
        align-self: center;
-       margin-left: 15%;
+       margin-left: 20%;
+    
         
     }
     .flame {
@@ -138,11 +140,12 @@ body {
       margin-left: -5%;
         width: 20px;
         height: 20px;
-        background-color: lightblue;
-        border: rgb(63, 71, 137) 2px solid;
+        background-color:#0041f1;
+        border: white 2px solid;
         border-radius: 40%;
         margin-bottom: -5%;
-        box-shadow: 5px 5px 10px black;
+        box-shadow: 10px 5px 10px black;
+        transform: rotate(-15deg);
     }
     @keyframes flicker {
         0% {
@@ -155,47 +158,84 @@ body {
 
         </style>
         <script>
+
+            let timeout = setTimeout(function(){
+                alert("Apaga las velas!!!");
+            }, 10000);
+
+ 
+            let body = document.getElementById("body");
+            let smoke = document.getElementById("smoke");
             let text = document.getElementById("leftText");
-            let element = document.getElementById("flame");
-            let element2 = document.getElementById("flameBase");
+            let flame = document.getElementById("flame");
+            let flameBase = document.getElementById("flameBase");
             let cake = document.getElementById("cake");
           
 
-            let element3 = document.getElementById("flame2");
-            let element4 = document.getElementById("flameBase2");
-            element.addEventListener("click", myFunct);
-            element2.addEventListener("click", myFunct);
-            element3.addEventListener("click", myFunct);
-            element4.addEventListener("click", myFunct);
-            function myFunct()
-            {
+            let flame2 = document.getElementById("flame2");
+            let flameBase2 = document.getElementById("flameBase2");
+            flame.addEventListener("click", myFunct);
+            flameBase.addEventListener("click", myFunct);
+            flame2.addEventListener("click", myFunct);
+            flameBase2.addEventListener("click", myFunct);
 
-                element2.style.width = "2px";
-                element2.style.heith = "2px";
-                element2.style.filter = "blur(0px)";
-                element2.style.border = "none";
-                element2.style.marginLeft = "10px";
-                element2.style.marginBottom = "-10px";
-                element2.style.backgroundColor = "brown";
-                element2.style.animation = "none"
-                text.style.display = "block";
-                element.style.display = "none";
-                cake.style.display = "none";
-           
-          
+let startX, startY;
 
-                element4.style.width = "2px";
-                element4.style.heith = "2px";
-                element4.style.filter = "blur(0px)";
-                element4.style.border = "none";
-                element4.style.marginLeft = "10px";
-                element4.style.marginBottom = "-10px";
-                element4.style.backgroundColor = "brown";
-                element4.style.animation = "none"
-                   element3.style.display = "none";
-                element4.style.animation = "none"
-        
-           
-                
+
+flame.addEventListener("touchstart", function(event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+});
+
+flame.addEventListener("touchend", function(event) {
+    let endX = event.changedTouches[0].clientX;
+    let endY = event.changedTouches[0].clientY;
+    if (Math.abs(endX - startX) > 30 || Math.abs(endY - startY) > 30) {
+        myFunct(); 
+    }
+});
+
+
+flame2.addEventListener("touchstart", function(event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+});
+
+flame2.addEventListener("touchend", function(event) {
+    let endX = event.changedTouches[0].clientX;
+    let endY = event.changedTouches[0].clientY;
+    if (Math.abs(endX - startX) > 30 || Math.abs(endY - startY) > 30) {
+        myFunct();
+    }
+});
+
+function myFunct() {
+    flameBase.style.width = "5px";
+    flameBase.style.heith = "5px";
+    flameBase.style.filter = "blur(0px)";
+    flameBase.style.border = "none";
+    flameBase.style.marginLeft = "10px";
+    flameBase.style.marginBottom = "-10px";
+    flameBase.style.backgroundColor = "brown";
+    flameBase.style.animation = "none";
+    text.style.display = "block";
+    flame.style.display = "none";
+    cake.style.display = "none";
+    flameBase2.style.width = "5px";
+    flameBase2.style.heith = "5px";
+    flameBase2.style.filter = "blur(0px)";
+    flameBase2.style.border = "none";
+    flameBase2.style.marginLeft = "10px";
+    flameBase2.style.marginBottom = "-10px";
+    flameBase2.style.backgroundColor = "brown";
+    flameBase2.style.animation = "none";
+    flame2.style.display = "none";
+    flameBase2.style.animation = "none";
+                body.style.backgroundImage = `
+        linear-gradient(#ffe100, #ffe100), 
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeOwD0wxkriQ5yYTiPMwTYnQfBCdacsoD58g&s")
+    `;
+    body.style.backgroundBlendMode = "multiply";
+                clearTimeout(timeout);
             }
         </script>
